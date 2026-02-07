@@ -1,14 +1,16 @@
 import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
 
-export default function GuestLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function GuestLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <main className="flex flex-col h-screen">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex-1 container mx-auto px-6">
-        {children}
-      </div>
+      <main className="flex-1">{children}</main>
       <Footer />
-    </main>
+    </div>
   );
 }
